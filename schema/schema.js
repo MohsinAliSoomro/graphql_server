@@ -1,5 +1,8 @@
 const graphql = require("graphql");
 const _ = require("lodash");
+const Author = require("../models/author");
+const Book = require("../models/book");
+
 const {
   GraphQLObjectType,
   GraphQLString,
@@ -9,22 +12,6 @@ const {
   GraphQLList,
 } = graphql;
 
-//dummy data
-const books = [
-  { name: "Mohsin", genre: "Ali", id: "1", autherid: "1" },
-  { name: "Farhan", genre: "Shah", id: "2", autherid: "2" },
-  { name: "Asim", genre: "Ahmed", id: "3", autherid: "3" },
-  { name: "Mohsin", genre: "Ahmed", id: "4", autherid: "1" },
-  { name: "Mohsin", genre: "Ali", id: "5", autherid: "1" },
-  { name: "Farhan", genre: "Shah", id: "6", autherid: "2" },
-  { name: "Asim", genre: "Ahmed", id: "7", autherid: "3" },
-  { name: "Mohsin", genre: "Ahmed", id: "8", autherid: "1" },
-];
-const authors = [
-  { name: "Mohsin", age: 21, id: "1" },
-  { name: "Farhan", age: 22, id: "2" },
-  { name: "Asim", age: 23, id: "3" },
-];
 
 const BookType = new GraphQLObjectType({
   name: "Book",
